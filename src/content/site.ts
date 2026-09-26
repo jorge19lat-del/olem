@@ -96,7 +96,7 @@ export const drop = {
       subtitle: "Camiseta · corte ajustado",
       description:
         "Crop top inspirado en Annobón, una pequeña isla volcánica del Atlántico con una riqueza cultural única.",
-      price: 20,
+      price: 15,
       sizes: ["XS", "S", "M", "L"],
       image: { src: "/images/baby-tee.webp", width: 1059, height: 980 },
       imageAlt: "Baby tee blanca acanalada con «Annobón, isla bonita» en letra cursiva negra",
