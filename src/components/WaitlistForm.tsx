@@ -1,8 +1,8 @@
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { startTransition, useActionState, useEffect, useState } from "react";
 import { joinWaitlist, type WaitlistState } from "@/app/actions";
-import { allSizes, drop, waitlist } from "@/content/site";
+import { drop, waitlist } from "@/content/site";
 import { RESERVE_EVENT } from "./ReserveLink";
 
 const initialState: WaitlistState = { status: "idle" };
@@ -13,10 +13,13 @@ const labelClass = "eyebrow text-stone";
 
 export function WaitlistForm() {
   const [state, formAction, pending] = useActionState(joinWaitlist, initialState);
-  const [product, setProduct] = useState("");
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggle = (id: string, checked: boolean) =>
+    setSelected((prev) => (checked ? [...new Set([...prev, id])] : prev.filter((p) => p !== id)));
 
   useEffect(() => {
-    const onReserve = (e: Event) => setProduct((e as CustomEvent<string>).detail);
+    const onReserve = (e: Event) => toggle((e as CustomEvent<string>).detail, true);
     window.addEventListener(RESERVE_EVENT, onReserve);
     return () => window.removeEventListener(RESERVE_EVENT, onReserve);
   }, []);
@@ -29,14 +32,6 @@ export function WaitlistForm() {
           {waitlist.heading}
         </h2>
         <p className="mt-8 max-w-md text-xl leading-relaxed text-shell/85 md:text-[1.375rem]">{waitlist.body}</p>
-        <ul className="mt-10 space-y-3">
-          {waitlist.notes.map((note) => (
-            <li key={note} className="eyebrow flex items-center gap-3 text-shell">
-              <span className="inline-block h-px w-6 bg-sky" aria-hidden />
-              {note}
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div className="col-span-12 px-4 py-20 md:col-span-6 md:col-start-7 md:px-0 md:py-32 md:pr-10">
@@ -46,10 +41,19 @@ export function WaitlistForm() {
             <p className="mt-6 max-w-md text-2xl leading-relaxed text-night/80">{waitlist.success.body}</p>
           </div>
         ) : (
-          <form action={formAction} noValidate className="space-y-10">
+          <form
+            noValidate
+            className="space-y-10"
+            onSubmit={(e) => {
+              // Enviamos a mano para que React no vacíe el formulario si vuelve con errores.
+              e.preventDefault();
+              const data = new FormData(e.currentTarget);
+              startTransition(() => formAction(data));
+            }}
+          >
             <div>
               <label htmlFor="name" className={labelClass}>
-                Nombre
+                Nombre y apellidos
               </label>
               <input
                 id="name"
@@ -57,7 +61,7 @@ export function WaitlistForm() {
                 type="text"
                 autoComplete="name"
                 required
-                placeholder="Tu nombre"
+                placeholder="Tu nombre y apellidos"
                 aria-invalid={!!state.fieldErrors?.name}
                 aria-describedby={state.fieldErrors?.name ? "name-error" : undefined}
                 className={fieldClass}
@@ -70,63 +74,79 @@ export function WaitlistForm() {
             </div>
 
             <div>
-              <label htmlFor="email" className={labelClass}>
-                Email
+              <label htmlFor="contact" className={labelClass}>
+                Email o número de teléfono
               </label>
               <input
-                id="email"
-                name="email"
-                type="email"
-                inputMode="email"
+                id="contact"
+                name="contact"
+                type="text"
                 autoComplete="email"
                 required
-                placeholder="tu@email.com"
-                aria-invalid={!!state.fieldErrors?.email}
-                aria-describedby={state.fieldErrors?.email ? "email-error" : undefined}
+                placeholder="tu@email.com · +34 600 000 000"
+                aria-invalid={!!state.fieldErrors?.contact}
+                aria-describedby={state.fieldErrors?.contact ? "contact-error" : undefined}
                 className={fieldClass}
               />
-              {state.fieldErrors?.email && (
-                <p id="email-error" className="mt-2 text-sm text-[#9a3b2e]">
-                  {state.fieldErrors.email}
+              {state.fieldErrors?.contact && (
+                <p id="contact-error" className="mt-2 text-sm text-[#9a3b2e]">
+                  {state.fieldErrors.contact}
                 </p>
               )}
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="product" className={labelClass}>
-                  Me interesa <span className="normal-case tracking-normal">(opcional)</span>
-                </label>
-                <select
-                  id="product"
-                  name="product"
-                  value={product}
-                  onChange={(e) => setProduct(e.target.value)}
-                  className={fieldClass}
-                >
-                  <option value="">—</option>
-                  {drop.products.map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name}
-                    </option>
-                  ))}
-                  <option value="ambas">Las dos</option>
-                </select>
+            <fieldset aria-describedby={state.fieldErrors?.products ? "products-error" : undefined}>
+              <legend className={labelClass}>Me interesa</legend>
+              <div className="mt-2">
+                {drop.products.map((p) => {
+                  const checked = selected.includes(p.id);
+                  return (
+                    <div
+                      key={p.id}
+                      className="flex min-h-[4.25rem] flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-night/25 py-3"
+                    >
+                      <label className="flex cursor-pointer items-center gap-4 text-xl text-night">
+                        <input
+                          type="checkbox"
+                          name="product"
+                          value={p.id}
+                          checked={checked}
+                          onChange={(e) => toggle(p.id, e.target.checked)}
+                          className="size-5 accent-petrol"
+                        />
+                        {p.name}
+                      </label>
+                      {checked && (
+                        <label className="flex items-center gap-3">
+                          <span className={labelClass}>Talla</span>
+                          <select
+                            name={`size-${p.id}`}
+                            defaultValue=""
+                            required
+                            aria-label={`Talla de ${p.name}`}
+                            className="border-0 border-b border-night/25 bg-transparent py-1 pr-8 pl-1 text-xl text-night focus:border-petrol focus:ring-0 focus:outline-none"
+                          >
+                            <option value="" disabled>
+                              —
+                            </option>
+                            {p.sizes.map((s) => (
+                              <option key={s} value={s}>
+                                {s}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
-              <div>
-                <label htmlFor="size" className={labelClass}>
-                  Talla <span className="normal-case tracking-normal">(opcional)</span>
-                </label>
-                <select id="size" name="size" defaultValue="" className={fieldClass}>
-                  <option value="">—</option>
-                  {allSizes.map((s) => (
-                    <option key={s} value={s}>
-                      {s}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
+              {state.fieldErrors?.products && (
+                <p id="products-error" className="mt-2 text-sm text-[#9a3b2e]">
+                  {state.fieldErrors.products}
+                </p>
+              )}
+            </fieldset>
 
             {/* Honeypot anti-spam: invisible para personas. */}
             <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">

@@ -76,15 +76,15 @@ export const drop = {
   eyebrow: "02 — Primer drop",
   heading: "Drop 01",
   intro:
-    "Dos camisetas para abrir la casa. Tirada corta, preventa por lista: primero te apuntas, luego te avisamos para reservar la tuya antes que nadie.",
+    "Dos camisetas concebidas para representar a una isla. Dos diseños que reflejan su esencia y su identidad, dentro y fuera de ella.",
   cta: "Reservar la mía",
   products: [
     {
       id: "pufferfish",
-      name: "Pufferfish",
+      name: "Pufferfish T-shirt",
       subtitle: "Camiseta · corte clásico",
       description:
-        "El pez globo de Annobón: se hace grande cuando lo necesita. Algodón de gramaje pesado, corte recto, estampado frontal.",
+        "Un homenaje a la isla, su paisaje y su identidad. Con referencias a las localidades de Awal, Mebana y Anganchi, y el motivo del pez globo.",
       price: 25,
       sizes: ["S", "M", "L", "XL"],
       image: { src: "/images/pufferfish.webp", width: 1219, height: 1183 },
@@ -92,10 +92,10 @@ export const drop = {
     },
     {
       id: "baby-tee",
-      name: "Baby Tee",
+      name: "Annobón Baby Tee",
       subtitle: "Camiseta · corte ajustado",
       description:
-        "Corte corto y ajustado, en punto acanalado, con «Annobón, isla bonita» en cursiva. Pensada para llevarla todos los días, sin ceremonia.",
+        "Crop top inspirado en Annobón, una pequeña isla volcánica del Atlántico con una riqueza cultural única.",
       price: 20,
       sizes: ["XS", "S", "M", "L"],
       image: { src: "/images/baby-tee.webp", width: 1059, height: 980 },
@@ -106,20 +106,22 @@ export const drop = {
 
 export const waitlist = {
   eyebrow: "03 — Preventa",
-  heading: "Lista de preventa",
-  body: "Aún no hay tienda. El Drop 01 se reserva por lista: déjanos tu nombre y tu email y te escribiremos antes de abrir, con acceso prioritario y la talla que elijas.",
-  notes: ["Sin pago ahora", "Acceso antes que nadie", "Tirada corta"],
+  heading: "Acceso anticipado",
+  body: "El primer drop será exclusivo en preventa. Déjanos tus datos y la talla que te interesa, y te escribiremos personalmente cuando esa talla esté disponible para que puedas acceder a ella antes del lanzamiento general.",
   success: {
     title: "Estás dentro.",
-    body: "Te escribiremos antes de abrir la preventa. Gracias por llegar tan pronto.",
+    body: "Te escribiremos cuando tu talla esté disponible. Gracias por llegar tan pronto.",
   },
 };
 
 export const footer = {
-  tagline: "Casa cultural. Annobón — mundo.",
+  /** Miniatura que enlaza al Instagram de la marca. */
+  instagram: {
+    label: "Sé parte de Olem",
+    image: { src: "/images/caracola.webp", width: 320, height: 320 },
+    imageAlt: "Caracola en espiral tallada en piedra",
+  },
 };
 
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
-
-export const allSizes = ["XS", "S", "M", "L", "XL"];

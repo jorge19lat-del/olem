@@ -12,7 +12,7 @@ function doPost(e) {
     const ss = SpreadsheetApp.getActiveSpreadsheet();
     const sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["Fecha", "Nombre", "Email", "Producto", "Talla"]);
+      sheet.appendRow(["Fecha", "Nombre", "Email o teléfono", "Producto", "Talla"]);
     }
 
     const lock = LockService.getScriptLock();
