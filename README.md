@@ -25,14 +25,14 @@ npm run typecheck
 
 ## Imágenes
 
-`hero.jpg` es una foto generada con IA (Canva). El resto son placeholders con la paleta de la marca, en `public/images/`:
+`hero.jpg` es una foto generada con IA (Canva) y `pufferfish.webp` / `baby-tee.webp` son las fotos reales de producto con fondo transparente (si cambias una, actualiza `width`/`height` en `site.ts`). `story.jpg` sigue siendo un placeholder con la paleta de la marca, en `public/images/`:
 
 | Archivo | Uso | Proporción |
 | --- | --- | --- |
 | `hero.jpg` | Hero a pantalla completa (texto encima) | 16:9 horizontal, mín. 2400 px de ancho; deja aire a la izquierda para el texto |
 | `story.jpg` | Narrativa | 3:4 / 4:5 vertical |
-| `pufferfish.jpg` | Camiseta Pufferfish | 4:5 vertical |
-| `baby-tee.jpg` | Baby tee | 4:5 vertical |
+| `pufferfish.webp` | Camiseta Pufferfish | Fondo transparente, recortada al borde de la prenda |
+| `baby-tee.webp` | Baby tee | Fondo transparente, recortada al borde de la prenda |
 
 Para poner las fotos reales, sustituye cada archivo por otro **con el mismo nombre** (mín. 1200 px de ancho).
 `next/image` se encarga de redimensionar y servir AVIF/WebP. Recuerda actualizar los textos `alt` en `site.ts`.
