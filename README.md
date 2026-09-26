@@ -29,7 +29,7 @@ Ahora mismo son placeholders con la paleta de la marca, en `public/images/`:
 
 | Archivo | Uso | Proporción |
 | --- | --- | --- |
-| `hero.jpg` | Hero | 4:5 vertical |
+| `hero.jpg` | Hero a pantalla completa (texto encima) | 16:9 horizontal, mín. 2400 px de ancho; deja aire a la izquierda para el texto |
 | `story.jpg` | Narrativa | 3:4 / 4:5 vertical |
 | `pufferfish.jpg` | Camiseta Pufferfish | 4:5 vertical |
 | `baby-tee.jpg` | Baby tee | 4:5 vertical |
