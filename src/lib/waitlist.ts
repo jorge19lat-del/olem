@@ -2,6 +2,7 @@ import "server-only";
 
 export type WaitlistEntry = {
   name: string;
+  /** Email o teléfono de contacto. */
   email: string;
   product: string;
   size: string;

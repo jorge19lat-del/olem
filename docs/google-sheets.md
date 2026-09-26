@@ -19,7 +19,8 @@ Sin base de datos, gratis, y los leads se ven y exportan como un Excel.
 7. Redeploy (Deployments → ⋯ → Redeploy) para que cojan las variables.
 
 La primera vez que llegue un lead se crea la pestaña **Preventa** con las columnas
-Fecha · Nombre · Email · Producto · Talla.
+Fecha · Nombre · Email o teléfono · Producto · Talla
+(si alguien marca las dos camisetas, van en la misma fila: «Producto» lista las dos y «Talla» indica la de cada una).
 
 > Si cambias el código del script, tienes que hacer **Implementar → Gestionar implementaciones → Editar → Nueva versión**;
 > si no, sigue corriendo la versión antigua.
