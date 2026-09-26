@@ -25,7 +25,7 @@ npm run typecheck
 
 ## Imágenes
 
-`hero.jpg` es una foto generada con IA (Canva) y `pufferfish.webp` / `baby-tee.webp` son las fotos reales de producto con fondo transparente (si cambias una, actualiza `width`/`height` en `site.ts`). La Fig. 02 de la narrativa es un collage (`IslandCollage`) que reutiliza `hero.jpg` y superpone el mapa ilustrado de Annobón (`AnnobonMap`, SVG). Todas están en `public/images/`:
+`hero.jpg` es una foto generada con IA (Canva) y `pufferfish.webp` / `baby-tee.webp` son las fotos reales de producto con fondo transparente (si cambias una, actualiza `width`/`height` en `site.ts`). La sección Origen gira en torno a un mapa de Annobón en curvas de nivel (`annobon-topo.svg`, componente `TopoMap`), con la costa calcada de un mapa dibujado de la isla y generado con `scripts/generate-annobon-topo.py`. Todas están en `public/images/`:
 
 | Archivo | Uso | Proporción |
 | --- | --- | --- |

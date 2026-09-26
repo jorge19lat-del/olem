@@ -23,8 +23,6 @@ export const hero = {
 };
 
 export const story = {
-  heading: ["Convertirse", "en."],
-  pullQuote: "No hacemos producto. Guardamos una forma de mirar y la ponemos en circulación.",
   /** Cada capítulo es una lista de párrafos. */
   chapters: [
     {
@@ -56,12 +54,10 @@ export const story = {
       ],
     },
   ],
-  /** Fig. 02: collage de la foto de la isla con el mapa de Annobón. */
-  collage: {
-    photoAlt: "Acantilados volcánicos de Annobón sobre el mar",
-    mapAlt: "Mapa de la isla de Annobón con San Antonio de Palé, el lago A Pot y el pico Quioveo",
+  /** Mapa de Annobón en curvas de nivel, en el centro de la sección. */
+  map: {
+    alt: "Mapa de la isla de Annobón en curvas de nivel blancas: San Antonio de Palea al norte, el lago Mazafim, el monte Quioveo y San Antonio del Sur",
   },
-  caption: "Fig. 02 — Annobón, isla y mapa",
 };
 
 export type Product = {
