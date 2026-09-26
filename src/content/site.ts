@@ -115,12 +115,8 @@ export const waitlist = {
 };
 
 export const footer = {
-  /** Miniatura que enlaza al Instagram de la marca. */
-  instagram: {
-    label: "Sé parte de Olem",
-    image: { src: "/images/caracola.webp", width: 320, height: 320 },
-    imageAlt: "Caracola en espiral tallada en piedra",
-  },
+  /** Enlace al Instagram de la marca, con el dibujo de la caracola encima. */
+  instagram: { label: "Sé parte de Olem" },
 };
 
 export const formatPrice = (value: number) =>

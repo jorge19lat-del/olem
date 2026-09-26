@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { footer, site } from "@/content/site";
+import { Caracola } from "./Caracola";
 import { Wordmark } from "./Wordmark";
 
 export function Footer() {
@@ -14,16 +14,9 @@ export function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${footer.instagram.label} en Instagram`}
-          className="group flex items-center gap-5 self-start md:mb-6 md:self-auto md:flex-row-reverse"
+          className="group flex flex-col items-start gap-5 md:mb-6 md:items-end md:text-right"
         >
-          <Image
-            src={footer.instagram.image.src}
-            width={footer.instagram.image.width}
-            height={footer.instagram.image.height}
-            alt={footer.instagram.imageAlt}
-            sizes="96px"
-            className="size-20 rounded-full object-cover ring-1 ring-shell/20 transition-transform duration-700 group-hover:rotate-[-20deg] md:size-24"
-          />
+          <Caracola className="h-auto w-28 text-cream transition-transform duration-1000 group-hover:-rotate-12 md:w-36" />
           <span className="text-2xl italic text-shell underline-offset-4 group-hover:underline md:text-3xl">
             {footer.instagram.label}
             <span className="eyebrow mt-2 block not-italic text-sky">Instagram ⟶</span>
