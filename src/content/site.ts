@@ -16,7 +16,7 @@ export const site = {
 export const hero = {
   lede: "Joyería y objetos hechos desde una isla pequeña en mitad del Golfo de Guinea. Piezas para llevar encima la memoria de un lugar — y lo que decides llegar a ser.",
   cta: "Unirme a la preventa",
-  imageAlt: "Costa volcánica de Annobón y mar en calma al atardecer",
+  imageAlt: "Acantilados volcánicos de la costa y mar azul con reflejos de sol",
   caption: "Fig. 01 — Annobón, mar abierto",
 };
 
