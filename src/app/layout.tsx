@@ -27,11 +27,9 @@ const jost = Jost({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+// En Vercel usamos siempre el dominio canónico (www): olem.es redirige a www, y la preview
+// (WhatsApp, Instagram…) debe apuntar a la URL final, sin redirecciones.
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL ? site.url : "http://localhost:3000");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

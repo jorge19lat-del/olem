@@ -6,6 +6,8 @@ export const site = {
   /** Logotipo en dos líneas: «Olem» en cursiva y «STUDIO» en mayúsculas. */
   wordmark: { name: "Olem", suffix: "Studio" },
   title: "Olem Studio",
+  /** Dominio canónico: el que aparece en las previews al compartir la web. */
+  url: "https://www.olem.es",
   description:
     "Olem es una casa cultural de joyería y objetos con raíces en la isla de Annobón. Preventa del Drop 01: apúntate a la lista.",
   instagram: {
