@@ -1,6 +1,10 @@
 // Genera imágenes placeholder con la paleta de Olem en public/images.
 // Sustituye cada archivo por la foto real con el mismo nombre (y proporción 4:5 o 3:4) y listo.
+// Las fotos reales se listan en REAL_PHOTOS y no se sobrescriben (usa --force para regenerarlas).
 import sharp from "sharp";
+
+const REAL_PHOTOS = new Set(["hero.jpg"]);
+const force = process.argv.includes("--force");
 
 const C = {
   shell: "#f6f3ec",
@@ -57,6 +61,10 @@ const images = {
 };
 
 for (const [file, [w, h, draw]] of Object.entries(images)) {
+  if (REAL_PHOTOS.has(file) && !force) {
+    console.log("· ", file, "(foto real, se mantiene)");
+    continue;
+  }
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">${draw(w, h)}</svg>`;
   await sharp(Buffer.from(svg)).jpeg({ quality: 82, mozjpeg: true }).toFile(`public/images/${file}`);
   console.log("✓", file);

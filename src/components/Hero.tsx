@@ -10,7 +10,7 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        className="-z-20 object-cover"
+        className="-z-20 object-cover object-[75%_50%] md:object-center"
       />
       {/* Degradado para que el texto se lea sobre cualquier foto. */}
       <div
