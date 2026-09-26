@@ -25,7 +25,7 @@ npm run typecheck
 
 ## Imágenes
 
-Ahora mismo son placeholders con la paleta de la marca, en `public/images/`:
+`hero.jpg` es una foto generada con IA (Canva). El resto son placeholders con la paleta de la marca, en `public/images/`:
 
 | Archivo | Uso | Proporción |
 | --- | --- | --- |
