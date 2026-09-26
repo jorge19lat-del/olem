@@ -5,17 +5,18 @@ import { ReserveLink } from "./ReserveLink";
 function ProductCard({ product, index, className }: { product: Product; index: number; className?: string }) {
   return (
     <article className={className}>
-      <div className="relative aspect-[4/5] overflow-hidden bg-sage">
+      <p className="eyebrow mb-6 text-stone">
+        {String(index + 1).padStart(2, "0")} / {String(drop.products.length).padStart(2, "0")}
+      </p>
+      <div>
         <Image
-          src={product.image}
+          src={product.image.src}
+          width={product.image.width}
+          height={product.image.height}
           alt={product.imageAlt}
-          fill
           sizes="(min-width: 768px) 45vw, 92vw"
-          className="object-cover transition-transform duration-1000 hover:scale-[1.02]"
+          className="h-auto w-full transition-transform duration-1000 hover:scale-[1.02]"
         />
-        <span className="eyebrow absolute top-4 left-4 bg-shell/90 px-3 py-2 text-petrol">
-          {String(index + 1).padStart(2, "0")} / {String(drop.products.length).padStart(2, "0")}
-        </span>
       </div>
 
       <div className="mt-6 flex items-baseline justify-between gap-4 border-t border-night/15 pt-5">

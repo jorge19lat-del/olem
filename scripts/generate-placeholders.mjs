@@ -21,10 +21,6 @@ const C = {
 const label = (text, color, w, h) =>
   `<text x="${w / 2}" y="${h - 60}" text-anchor="middle" font-family="Georgia, serif" font-size="26" letter-spacing="8" fill="${color}">${text}</text>`;
 
-const tee = (fill, cx, cy, s) => `
-  <path transform="translate(${cx} ${cy}) scale(${s})" fill="${fill}"
-    d="M-90 -150 L-40 -170 Q0 -140 40 -170 L90 -150 L160 -90 L120 -40 L90 -60 L90 170 L-90 170 L-90 -60 L-120 -40 L-160 -90 Z"/>`;
-
 const waves = (w, y0, n, gap, color, opacity) =>
   Array.from(
     { length: n },
@@ -47,17 +43,6 @@ const images = {
     ${waves(w, h * 0.15, 18, 70, C.sky, 0.45)}
     <circle cx="${w / 2}" cy="${h * 0.42}" r="${w * 0.2}" fill="none" stroke="${C.cream}" stroke-width="2" opacity="0.6"/>
     ${label("OLEM — IMAGEN ORIGEN", C.shell, w, h)}`],
-  "pufferfish.jpg": [1200, 1500, (w, h) => `
-    <rect width="${w}" height="${h}" fill="${C.sage}"/>
-    ${tee(C.shell, w / 2, h / 2 - 40, 2.6)}
-    <circle cx="${w / 2}" cy="${h / 2 - 150}" r="80" fill="none" stroke="${C.petrol}" stroke-width="6"/>
-    <circle cx="${w / 2}" cy="${h / 2 - 150}" r="40" fill="${C.petrol}"/>
-    ${label("FOTO PRODUCTO — PUFFERFISH", C.stone, w, h)}`],
-  "baby-tee.jpg": [1200, 1500, (w, h) => `
-    <rect width="${w}" height="${h}" fill="${C.cream}"/>
-    ${tee(C.shell, w / 2, h / 2 - 60, 2.1)}
-    <text x="${w / 2}" y="${h / 2 - 170}" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="64" fill="${C.night}">Isla bonita</text>
-    ${label("FOTO PRODUCTO — BABY TEE", C.stone, w, h)}`],
 };
 
 for (const [file, [w, h, draw]] of Object.entries(images)) {

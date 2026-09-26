@@ -52,7 +52,8 @@ export type Product = {
   description: string;
   price: number;
   sizes: string[];
-  image: string;
+  /** PNG/WebP con fondo transparente; width/height son los píxeles reales del archivo. */
+  image: { src: string; width: number; height: number };
   imageAlt: string;
 };
 
@@ -71,19 +72,19 @@ export const drop = {
         "El pez globo de Annobón: se hace grande cuando lo necesita. Algodón de gramaje pesado, corte recto, estampado frontal.",
       price: 25,
       sizes: ["S", "M", "L", "XL"],
-      image: "/images/pufferfish.jpg",
-      imageAlt: "Camiseta Pufferfish de Olem",
+      image: { src: "/images/pufferfish.webp", width: 1219, height: 1183 },
+      imageAlt: "Camiseta blanca Pufferfish con el pez globo azul y el texto «Isla de Annobón»",
     },
     {
       id: "baby-tee",
       name: "Baby Tee",
       subtitle: "Camiseta · corte ajustado",
       description:
-        "Corte corto y ajustado, con el sello de Olem. Pensada para llevarla todos los días, sin ceremonia.",
+        "Corte corto y ajustado, en punto acanalado, con «Annobón, isla bonita» en cursiva. Pensada para llevarla todos los días, sin ceremonia.",
       price: 20,
       sizes: ["XS", "S", "M", "L"],
-      image: "/images/baby-tee.jpg",
-      imageAlt: "Baby tee de Olem",
+      image: { src: "/images/baby-tee.webp", width: 1059, height: 980 },
+      imageAlt: "Baby tee blanca acanalada con «Annobón, isla bonita» en letra cursiva negra",
     },
   ] satisfies Product[],
 };
