@@ -42,5 +42,5 @@ Ver [`docs/google-sheets.md`](docs/google-sheets.md). Variables de entorno en `.
 
 ## Tipografías
 
-- Logotipo y titulares: **The Seasons** — la del logotipo «Olem STUDIO». Es de pago, así que no está en el repo: con la licencia web, coloca `the-seasons-regular.woff2` y `the-seasons-italic.woff2` en `public/fonts/` (ver `@font-face` en `globals.css`). Si no están, se muestra Cormorant Garamond.
-- Cuerpo: **Cormorant Garamond**; etiquetas: **Jost**. Ambas vía `next/font/google` (autoalojadas, sin petición extra a Google).
+- Logotipo y titulares: **Playfair Display** — alternativa gratuita a The Seasons (la tipografía del logotipo, de pago): serif de alto contraste con cursiva curva.
+- Cuerpo: **Cormorant Garamond**; etiquetas: **Jost**. Todas vía `next/font/google` (autoalojadas, sin petición extra a Google).
