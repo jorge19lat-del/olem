@@ -23,16 +23,16 @@ export function WaitlistForm() {
 
   return (
     <section id="preventa" className="grid grid-cols-12 scroll-mt-4" aria-labelledby="preventa-titulo">
-      <div className="col-span-12 bg-cream px-4 py-20 text-petrol md:col-span-5 md:px-10 md:py-32">
-        <p className="eyebrow text-stone">{waitlist.eyebrow}</p>
+      <div className="col-span-12 bg-petrol px-4 py-20 text-shell md:col-span-5 md:px-10 md:py-32">
+        <p className="eyebrow text-sky">{waitlist.eyebrow}</p>
         <h2 id="preventa-titulo" className="display mt-8 text-[16vw] md:text-[6vw]">
           {waitlist.heading}
         </h2>
-        <p className="mt-8 max-w-md text-xl leading-relaxed text-night/80 md:text-[1.375rem]">{waitlist.body}</p>
+        <p className="mt-8 max-w-md text-xl leading-relaxed text-shell/85 md:text-[1.375rem]">{waitlist.body}</p>
         <ul className="mt-10 space-y-3">
           {waitlist.notes.map((note) => (
-            <li key={note} className="eyebrow flex items-center gap-3 text-petrol">
-              <span className="inline-block h-px w-6 bg-petrol" aria-hidden />
+            <li key={note} className="eyebrow flex items-center gap-3 text-shell">
+              <span className="inline-block h-px w-6 bg-sky" aria-hidden />
               {note}
             </li>
           ))}

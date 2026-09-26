@@ -29,14 +29,14 @@ const waves = (w, y0, n, gap, color, opacity) =>
   ).join("");
 
 const images = {
-  "hero.jpg": [1200, 1500, (w, h) => `
+  "hero.jpg": [2400, 1350, (w, h) => `
     <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="${C.sage}"/><stop offset="1" stop-color="${C.sky}"/>
     </linearGradient></defs>
     <rect width="${w}" height="${h * 0.55}" fill="url(#sky)"/>
     <path d="M${w * 0.55} ${h * 0.55} L${w * 0.72} ${h * 0.43} L${w * 0.8} ${h * 0.47} L${w} ${h * 0.4} L${w} ${h * 0.55} Z" fill="${C.olive}" opacity="0.7"/>
     <rect y="${h * 0.55}" width="${w}" height="${h * 0.45}" fill="${C.petrol}"/>
-    ${waves(w, h * 0.6, 8, 60, C.shell, 0.35)}
+    ${waves(w, h * 0.6, 9, 55, C.shell, 0.35)}
     ${label("OLEM — IMAGEN HERO", C.shell, w, h)}`],
   "story.jpg": [1200, 1600, (w, h) => `
     <rect width="${w}" height="${h}" fill="${C.petrolDeep}"/>
