@@ -1,5 +1,5 @@
 import { story } from "@/content/site";
-import { IslandCollage } from "./IslandCollage";
+import { TopoMap } from "./TopoMap";
 
 export function BrandStory() {
   return (
@@ -13,7 +13,7 @@ export function BrandStory() {
               <span className="italic text-sky">{story.heading[1]}</span>
             </h2>
             <figure className="mt-14 hidden md:block md:w-4/5">
-              <IslandCollage sizes="30vw" />
+              <TopoMap />
               <figcaption className="mt-3 text-base italic text-shell/60">{story.caption}</figcaption>
             </figure>
           </div>
@@ -37,7 +37,7 @@ export function BrandStory() {
           </ol>
 
           <figure className="mt-16 md:hidden">
-            <IslandCollage sizes="80vw" />
+            <TopoMap />
             <figcaption className="mt-3 text-base italic text-shell/60">{story.caption}</figcaption>
           </figure>
 

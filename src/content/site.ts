@@ -56,12 +56,11 @@ export const story = {
       ],
     },
   ],
-  /** Fig. 02: collage de la foto de la isla con el mapa de Annobón. */
-  collage: {
-    photoAlt: "Acantilados volcánicos de Annobón sobre el mar",
-    mapAlt: "Mapa de la isla de Annobón con San Antonio de Palé, el lago A Pot y el pico Quioveo",
+  /** Fig. 02: mapa de Annobón en curvas de nivel. */
+  map: {
+    alt: "Mapa topográfico de la isla de Annobón en líneas blancas: curvas de nivel hasta el pico Quioveo, el cráter del lago A Pot y San Antonio de Palé al norte",
   },
-  caption: "Fig. 02 — Annobón, isla y mapa",
+  caption: "Fig. 02 — Annobón, curvas de nivel",
 };
 
 export type Product = {
