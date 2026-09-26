@@ -1,4 +1,4 @@
-import { footer, site } from "@/content/site";
+import { site } from "@/content/site";
 import { Wordmark } from "./Wordmark";
 
 export function Footer() {
@@ -8,16 +8,15 @@ export function Footer() {
         <p className="text-[24vw] md:text-[12vw]">
           <Wordmark />
         </p>
-        <div className="space-y-4 md:pb-6 md:text-right">
+        <div className="md:pb-6 md:text-right">
           <a
             href={site.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="eyebrow block text-sky underline-offset-4 hover:underline"
+            className="eyebrow block text-cream underline-offset-4 hover:underline"
           >
             Instagram {site.instagram.handle}
           </a>
-          <p className="text-xl italic text-shell/70">{footer.tagline}</p>
         </div>
       </div>
       <div className="eyebrow mt-14 flex justify-between border-t border-shell/15 pt-6 text-shell/50">

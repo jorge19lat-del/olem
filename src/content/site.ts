@@ -115,10 +115,6 @@ export const waitlist = {
   },
 };
 
-export const footer = {
-  tagline: "Casa cultural. Annobón — mundo.",
-};
-
 export const formatPrice = (value: number) =>
   new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 }).format(value);
 
