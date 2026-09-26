@@ -56,7 +56,7 @@ export const story = {
   ],
   /** Mapa de Annobón en curvas de nivel, en el centro de la sección. */
   map: {
-    alt: "Mapa de la isla de Annobón en curvas de nivel blancas: San Antonio de Palea al norte, el lago Mazafim, el monte Quioveo y San Antonio del Sur",
+    alt: "Mapa de la isla de Annobón dibujado con curvas de nivel blancas",
   },
 };
 
