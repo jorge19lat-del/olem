@@ -8,10 +8,10 @@ export function ReserveLink({ productId, children }: { productId: string; childr
     <a
       href="#preventa"
       onClick={() => window.dispatchEvent(new CustomEvent(RESERVE_EVENT, { detail: productId }))}
-      className="eyebrow inline-flex items-center gap-3 border border-ink px-5 py-3.5 transition-colors hover:border-rust hover:bg-rust hover:text-parchment"
+      className="eyebrow inline-flex items-center gap-4 border border-petrol px-6 py-3.5 text-petrol transition-colors hover:bg-petrol hover:text-shell"
     >
       {children}
-      <span aria-hidden>→</span>
+      <span aria-hidden>⟶</span>
     </a>
   );
 }
