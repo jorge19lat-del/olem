@@ -7,29 +7,41 @@ export const alt = site.title;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const fontPath = (weight: number) =>
-  join(process.cwd(), `node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-${weight}-normal.woff`);
+const fontPath = (weight: number, style: "normal" | "italic") =>
+  join(
+    process.cwd(),
+    `node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-${weight}-${style}.woff`,
+  );
 
 export default async function OpengraphImage() {
-  const [bold, black] = await Promise.all([readFile(fontPath(700)), readFile(fontPath(800))]);
+  const [light, italic] = await Promise.all([readFile(fontPath(300, "normal")), readFile(fontPath(300, "italic"))]);
 
   return new ImageResponse(
     (
-      <div style={{ display: "flex", width: "100%", height: "100%", background: "#f2ede6", fontFamily: "Barlow" }}>
+      <div style={{ display: "flex", width: "100%", height: "100%", background: "#f6f3ec", fontFamily: "Cormorant" }}>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 64, flex: 1 }}>
-          <div style={{ display: "flex", fontSize: 26, fontWeight: 700, letterSpacing: 5, color: "#b4532a" }}>
+          <div style={{ display: "flex", fontSize: 24, letterSpacing: 6, color: "#6b6a60" }}>
             CASA CULTURAL · ANNOBÓN
           </div>
-          <div style={{ display: "flex", fontSize: 330, fontWeight: 800, lineHeight: 0.8, color: "#151311" }}>OLEM</div>
-          <div style={{ display: "flex", fontSize: 30, fontWeight: 700, letterSpacing: 4, color: "#151311" }}>
-            DROP 01 — PREVENTA ABIERTA
+          <div style={{ display: "flex", fontSize: 220, letterSpacing: 28, lineHeight: 0.9, color: "#1b5b6f" }}>OLEM</div>
+          <div style={{ display: "flex", fontSize: 40, fontStyle: "italic", color: "#12030b" }}>
+            Drop 01 — preventa abierta
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", width: 320, background: "#151311", padding: 48 }}>
-          <div style={{ display: "flex", width: 80, height: 8, background: "#b4532a", marginBottom: 28 }} />
-          <div style={{ display: "flex", flexDirection: "column", fontSize: 50, fontWeight: 800, lineHeight: 0.9, color: "#f2ede6" }}>
-            <span>CONVERTIRSE</span>
-            <span style={{ color: "#b4532a" }}>EN.</span>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            width: 340,
+            background: "#1b5b6f",
+            padding: 48,
+          }}
+        >
+          <div style={{ display: "flex", width: 80, height: 1, background: "#83d0e0", marginBottom: 28 }} />
+          <div style={{ display: "flex", flexDirection: "column", fontSize: 56, lineHeight: 1, color: "#f6f3ec" }}>
+            <span>Convertirse</span>
+            <span style={{ fontStyle: "italic", color: "#83d0e0" }}>en.</span>
           </div>
         </div>
       </div>
@@ -37,8 +49,8 @@ export default async function OpengraphImage() {
     {
       ...size,
       fonts: [
-        { name: "Barlow", data: bold, weight: 700, style: "normal" },
-        { name: "Barlow", data: black, weight: 800, style: "normal" },
+        { name: "Cormorant", data: light, weight: 300, style: "normal" },
+        { name: "Cormorant", data: italic, weight: 300, style: "italic" },
       ],
     },
   );

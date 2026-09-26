@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-parchment: #f2ede6;
-  --color-sand: #e6ddd1;
-  --color-ink: #151311;
-  --color-ink-soft: #2a2622;
-  --color-rust: #b4532a;
-  --color-rust-deep: #8f3f1f;
-  --color-stone: #6f665c;
+  /* Paleta Olem — mar, isla y papel */
+  --color-shell: #f6f3ec; /* fondo, papel cálido */
+  --color-cream: #f1f1cb; /* crema de marca */
+  --color-sage: #dcdfcb; /* verde salvia pálido */
+  --color-sky: #83d0e0; /* azul cielo / agua clara */
+  --color-petrol: #1b5b6f; /* azul petróleo, color principal */
+  --color-petrol-deep: #123f4e;
+  --color-olive: #8e9c5b; /* verde oliva */
+  --color-night: #12030b; /* casi negro */
+  --color-stone: #6b6a60; /* texto secundario */
 
-  --font-display: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
-  --font-serif: var(--font-newsreader), Georgia, serif;
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer base {
@@ -20,20 +23,22 @@
   }
 
   body {
-    background: var(--color-parchment);
-    color: var(--color-ink);
+    background: var(--color-shell);
+    color: var(--color-night);
     font-family: var(--font-serif);
+    font-weight: 400;
+    font-variant-numeric: lining-nums;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   ::selection {
-    background: var(--color-rust);
-    color: var(--color-parchment);
+    background: var(--color-petrol);
+    color: var(--color-shell);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-rust);
+    outline: 1px solid var(--color-petrol);
     outline-offset: 3px;
   }
 
@@ -44,19 +49,29 @@
   }
 }
 
+/* Titulares: serif fina, editorial. */
 @utility display {
-  font-family: var(--font-display);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.82;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 0.95;
   letter-spacing: -0.01em;
 }
 
-@utility eyebrow {
-  font-family: var(--font-display);
-  font-weight: 700;
+/* Logotipo OLEM: serif en mayúsculas, espaciada. */
+@utility wordmark {
+  font-family: var(--font-serif);
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.75rem;
+  letter-spacing: 0.14em;
   line-height: 1;
+}
+
+/* Etiquetas pequeñas: sans fina, mayúsculas, muy espaciada. */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.6875rem;
+  line-height: 1.2;
 }

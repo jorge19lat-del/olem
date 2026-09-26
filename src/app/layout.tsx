@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Newsreader } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 import { site } from "@/content/site";
 import "./globals.css";
 
-const barlowCondensed = Barlow_Condensed({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["700", "800"],
-  variable: "--font-barlow-condensed",
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const newsreader = Newsreader({
+const jost = Jost({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-newsreader",
+  weight: ["300", "400"],
+  variable: "--font-jost",
   display: "swap",
 });
 
@@ -44,12 +45,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f2ede6",
+  themeColor: "#f6f3ec",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${barlowCondensed.variable} ${newsreader.variable}`}>
+    <html lang="es" className={`${cormorant.variable} ${jost.variable}`}>
       <body>{children}</body>
     </html>
   );
