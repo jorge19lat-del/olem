@@ -23,8 +23,6 @@ export const hero = {
 };
 
 export const story = {
-  heading: ["Convertirse", "en."],
-  pullQuote: "No hacemos producto. Guardamos una forma de mirar y la ponemos en circulación.",
   /** Cada capítulo es una lista de párrafos. */
   chapters: [
     {
@@ -56,11 +54,10 @@ export const story = {
       ],
     },
   ],
-  /** Fig. 02: mapa de Annobón en curvas de nivel. */
+  /** Mapa de Annobón en curvas de nivel, en el centro de la sección. */
   map: {
-    alt: "Mapa topográfico de la isla de Annobón en líneas blancas: curvas de nivel hasta el pico Quioveo, el cráter del lago A Pot y San Antonio de Palé al norte",
+    alt: "Mapa de la isla de Annobón en curvas de nivel blancas: San Antonio de Palea al norte, el lago Mazafim, el monte Quioveo y San Antonio del Sur",
   },
-  caption: "Fig. 02 — Annobón, curvas de nivel",
 };
 
 export type Product = {
