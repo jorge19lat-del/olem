@@ -3,7 +3,7 @@ import { story } from "@/content/site";
 
 export function BrandStory() {
   return (
-    <section id="origen" className="bg-petrol text-shell" aria-labelledby="origen-titulo">
+    <section id="origen" className="bg-night text-shell" aria-labelledby="origen-titulo">
       <div className="grid grid-cols-12 gap-x-4 px-4 py-24 md:gap-x-8 md:px-10 md:py-36">
         <div className="col-span-12 md:col-span-5">
           <div className="md:sticky md:top-12">
@@ -14,7 +14,7 @@ export function BrandStory() {
               <span className="italic text-sky">{story.heading[1]}</span>
             </h2>
             <figure className="mt-14 hidden md:block md:w-4/5">
-              <div className="relative aspect-[3/4] overflow-hidden bg-petrol-deep">
+              <div className="relative aspect-[3/4] overflow-hidden bg-shell/10">
                 <Image
                   src="/images/story.jpg"
                   alt={story.imageAlt}
@@ -42,7 +42,7 @@ export function BrandStory() {
           </ol>
 
           <figure className="mt-16 md:hidden">
-            <div className="relative aspect-[4/5] overflow-hidden bg-petrol-deep">
+            <div className="relative aspect-[4/5] overflow-hidden bg-shell/10">
               <Image src="/images/story.jpg" alt={story.imageAlt} fill sizes="92vw" className="object-cover" />
             </div>
             <figcaption className="mt-3 text-base italic text-shell/60">{story.caption}</figcaption>
