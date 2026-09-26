@@ -14,10 +14,10 @@ export function Hero() {
       />
       {/* Degradado para que el texto se lea sobre cualquier foto. */}
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-t from-night/75 via-night/25 to-night/40 md:bg-gradient-to-r md:from-night/70 md:via-night/30 md:to-night/0"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-petrol-deep/80 via-petrol-deep/30 to-petrol-deep/10 md:bg-gradient-to-r md:from-petrol-deep/65 md:via-petrol-deep/20 md:to-transparent"
         aria-hidden
       />
-      <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-night/50 to-transparent" aria-hidden />
+      <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-petrol-deep/40 to-transparent" aria-hidden />
 
       <nav className="flex items-center justify-between px-4 pt-6 md:px-10 md:pt-8">
         <span className="wordmark text-xl">{site.name}</span>
@@ -28,7 +28,7 @@ export function Hero() {
 
       <div className="mt-auto grid grid-cols-12 gap-x-4 px-4 pt-24 pb-10 md:gap-x-8 md:px-10 md:pb-16">
         <div className="col-span-12 md:col-span-8 lg:col-span-7">
-          <h1 className="wordmark text-[26vw] font-light md:text-[13vw] lg:text-[12rem]">
+          <h1 className="wordmark [text-shadow:0_2px_24px_rgb(18_63_78/0.35)] text-[26vw] font-light md:text-[13vw] lg:text-[12rem]">
             {site.name}
           </h1>
           <p className="mt-8 max-w-xl text-2xl leading-snug font-light italic text-shell/90 md:mt-10 md:text-3xl">
