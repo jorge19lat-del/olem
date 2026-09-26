@@ -3,7 +3,7 @@
 
 export const site = {
   name: "Olem",
-  title: "Olem — Casa cultural de Annobón",
+  title: "Olem",
   description:
     "Olem es una casa cultural de joyería y objetos con raíces en la isla de Annobón. Preventa del Drop 01: apúntate a la lista.",
   instagram: {
@@ -14,7 +14,6 @@ export const site = {
 };
 
 export const hero = {
-  kicker: "Casa cultural · Annobón",
   lede: "Joyería y objetos hechos desde una isla pequeña en mitad del Golfo de Guinea. Piezas para llevar encima la memoria de un lugar — y lo que decides llegar a ser.",
   cta: "Unirme a la preventa",
   imageAlt: "Retrato editorial de Olem",

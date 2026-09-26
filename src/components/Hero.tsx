@@ -28,11 +28,7 @@ export function Hero() {
 
       <div className="mt-auto grid grid-cols-12 gap-x-4 px-4 pt-24 pb-10 md:gap-x-8 md:px-10 md:pb-16">
         <div className="col-span-12 md:col-span-8 lg:col-span-7">
-          <p className="eyebrow flex items-center gap-3 text-shell/80">
-            <span className="inline-block h-px w-10 bg-shell/80" aria-hidden />
-            {hero.kicker}
-          </p>
-          <h1 className="wordmark mt-6 text-[26vw] font-light md:mt-8 md:text-[13vw] lg:text-[12rem]">
+          <h1 className="wordmark text-[26vw] font-light md:text-[13vw] lg:text-[12rem]">
             {site.name}
           </h1>
           <p className="mt-8 max-w-xl text-2xl leading-snug font-light italic text-shell/90 md:mt-10 md:text-3xl">
