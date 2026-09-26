@@ -23,9 +23,6 @@ export function Hero() {
 
       <nav className="flex items-center justify-between px-4 pt-6 md:px-10 md:pt-8">
         <Wordmark className="text-2xl" />
-        <a href="#preventa" className="eyebrow underline-offset-4 hover:underline">
-          Drop 01 — Preventa
-        </a>
       </nav>
 
       <div className="mt-auto grid grid-cols-12 gap-x-4 px-4 pt-24 pb-10 md:gap-x-8 md:px-10 md:pb-16">
