@@ -3,7 +3,9 @@
 
 export const site = {
   name: "Olem",
-  title: "Olem",
+  /** Logotipo en dos líneas: «Olem» en cursiva y «STUDIO» en mayúsculas. */
+  wordmark: { name: "Olem", suffix: "Studio" },
+  title: "Olem Studio",
   description:
     "Olem es una casa cultural de joyería y objetos con raíces en la isla de Annobón. Preventa del Drop 01: apúntate a la lista.",
   instagram: {
@@ -14,35 +16,52 @@ export const site = {
 };
 
 export const hero = {
-  lede: "Joyería y objetos hechos desde una isla pequeña en mitad del Golfo de Guinea. Piezas para llevar encima la memoria de un lugar — y lo que decides llegar a ser.",
+  lede: "Creamos piezas destinadas a ser vividas, objetos para acompañar el proceso de convertirse en quien uno quiere llegar a ser.",
   cta: "Unirme a la preventa",
   imageAlt: "Acantilados volcánicos de la costa y mar azul con reflejos de sol",
   caption: "Fig. 01 — Annobón, mar abierto",
 };
 
 export const story = {
-  eyebrow: "01 — Origen",
   heading: ["Convertirse", "en."],
   pullQuote: "No hacemos producto. Guardamos una forma de mirar y la ponemos en circulación.",
+  /** Cada capítulo es una lista de párrafos. */
   chapters: [
     {
       number: "I",
-      title: "El nombre",
-      body: "Olem es una palabra pequeña que carga una idea grande: el paso de ser a llegar a ser. No nombra un objeto, nombra un movimiento. Por eso Olem no es una marca que vende cosas, sino una casa donde las cosas cuentan de dónde vienen.",
+      title: "Origen",
+      body: [
+        "«Olem» significa «remo» en fa d’Ambô, la lengua hablada en la isla de Annobón. No se trata de cualquier remo, sino del utilizado para navegar el océano Atlántico que rodea la isla.",
+        "Más que un objeto, representa un gesto: avanzar incluso cuando el mar se vuelve difícil. Levantado en el aire, simboliza una petición de ayuda. Una palabra heredada de generación en generación.",
+      ],
     },
     {
       number: "II",
-      title: "La isla",
-      body: "Annobón es una isla volcánica de apenas diecisiete kilómetros cuadrados, al sur del ecuador, lejos de casi todo. Allí se habla fá d’ambô, se vive de cara al mar y la herencia pasa de mano en mano. Esa distancia es nuestro territorio emocional: un origen que no cabe en el mapa pero sí en el cuerpo.",
+      title: "Construirse",
+      body: [
+        "Empieza cuando comenzamos a elegir y nunca termina.",
+        "Nos construyen las personas que amamos, los lugares que habitamos, los libros que leemos, las conversaciones que nos transforman, los viajes, la memoria, el tiempo y también los objetos que decidimos conservar.",
+        "Cada decisión deja una huella.",
+        "Cada huella participa en aquello que terminamos siendo.",
+      ],
     },
     {
       number: "III",
-      title: "La filosofía",
-      body: "Cada pieza es un punto de partida, no un final. Diseñamos objetos para acompañar un proceso — el de quien los lleva — con materiales honestos, series cortas y símbolos que vienen de la isla: el mar, la pesca, el pez globo que se hace grande para protegerse.",
+      title: "Nuestra filosofía",
+      body: [
+        "En Olem creemos que construirse es uno de los actos más importantes de una vida. Significa elegir. Elegir qué conservar. Qué dejar atrás. Qué aprender. Qué desaprender. Qué sueños perseguir. Qué historias seguir contando.",
+        "No creemos que la identidad sea algo fijo, creemos que estamos en constante construcción.",
+        "Por eso nuestros objetos no existen para definir quién eres.",
+        "Existen para acompañarte mientras te conviertes en quien quieres llegar a ser.",
+      ],
     },
   ],
-  imageAlt: "Detalle de textura y mar de Annobón",
-  caption: "Fig. 02 — Herencia, mano a mano",
+  /** Fig. 02: collage de la foto de la isla con el mapa de Annobón. */
+  collage: {
+    photoAlt: "Acantilados volcánicos de Annobón sobre el mar",
+    mapAlt: "Mapa de la isla de Annobón con San Antonio de Palé, el lago A Pot y el pico Quioveo",
+  },
+  caption: "Fig. 02 — Annobón, isla y mapa",
 };
 
 export type Product = {

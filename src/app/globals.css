@@ -1,5 +1,32 @@
 @import "tailwindcss";
 
+/*
+ * The Seasons (tipografía del logotipo). Es una fuente con licencia comercial, así que
+ * no va en el repo: coloca los archivos con licencia web en public/fonts/ con estos nombres.
+ * Mientras no estén, se usa Cormorant Garamond.
+ */
+@font-face {
+  font-family: "The Seasons";
+  src:
+    local("The Seasons"),
+    local("TheSeasons-Regular"),
+    url("/fonts/the-seasons-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "The Seasons";
+  src:
+    local("The Seasons Italic"),
+    local("TheSeasons-Italic"),
+    url("/fonts/the-seasons-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 @theme {
   /* Paleta Olem — mar, isla y papel */
   --color-shell: #f6f3ec; /* fondo, papel cálido */
@@ -13,6 +40,7 @@
   --color-stone: #6b6a60; /* texto secundario */
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-display: "The Seasons", var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
   --font-sans: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -49,21 +77,19 @@
   }
 }
 
-/* Titulares: serif fina, editorial. */
+/* Titulares: The Seasons (serif de alto contraste, la del logotipo). */
 @utility display {
-  font-family: var(--font-serif);
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.01em;
 }
 
-/* Logotipo OLEM: serif en mayúsculas, espaciada. */
+/* Logotipo «Olem STUDIO» en The Seasons. */
 @utility wordmark {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 /* Etiquetas pequeñas: sans fina, mayúsculas, muy espaciada. */

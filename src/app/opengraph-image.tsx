@@ -20,7 +20,10 @@ export default async function OpengraphImage() {
     (
       <div style={{ display: "flex", width: "100%", height: "100%", background: "#f6f3ec", fontFamily: "Cormorant" }}>
         <div style={{ display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: 40, padding: 64, flex: 1 }}>
-          <div style={{ display: "flex", fontSize: 220, letterSpacing: 28, lineHeight: 0.9, color: "#1b5b6f" }}>OLEM</div>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", lineHeight: 0.9, color: "#1b5b6f" }}>
+            <span style={{ fontSize: 200, fontStyle: "italic" }}>Olem</span>
+            <span style={{ fontSize: 120, letterSpacing: 4 }}>STUDIO</span>
+          </div>
           <div style={{ display: "flex", fontSize: 40, fontStyle: "italic", color: "#12030b" }}>
             Drop 01 — preventa abierta
           </div>
