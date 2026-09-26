@@ -29,7 +29,7 @@ npm run typecheck
 
 | Archivo | Uso | Proporción |
 | --- | --- | --- |
-| `hero.jpg` | Hero a pantalla completa (texto encima) | 16:9 horizontal, mín. 2400 px de ancho; deja aire a la izquierda para el texto |
+| `hero.jpg` | Hero a pantalla completa (texto encima) | 16:9 horizontal, mín. 3200 px de ancho (pantallas Retina); deja aire a la izquierda para el texto |
 | `pufferfish.webp` | Camiseta Pufferfish | Fondo transparente, recortada al borde de la prenda |
 | `baby-tee.webp` | Baby tee | Fondo transparente, recortada al borde de la prenda |
 
