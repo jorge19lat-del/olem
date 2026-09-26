@@ -9,8 +9,8 @@ export default function Home() {
     <>
       <Hero />
       <main>
-        <BrandStory />
         <DropSection />
+        <BrandStory />
         <WaitlistForm />
       </main>
       <Footer />
