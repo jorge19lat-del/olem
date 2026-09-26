@@ -13,9 +13,9 @@ const placement = [
 export function BrandStory() {
   return (
     <section id="origen" className="bg-night text-shell" aria-label="Origen">
-      <div className="mx-auto grid max-w-6xl gap-y-14 px-4 py-20 md:grid-cols-[1fr_minmax(0,28rem)_1fr] md:gap-x-12 md:gap-y-24 md:px-10 md:py-28">
+      <div className="mx-auto grid max-w-[88rem] gap-y-14 px-4 py-20 md:grid-cols-[1fr_minmax(0,28rem)_1fr] md:gap-x-12 md:gap-y-16 md:px-10 md:py-28">
         {story.chapters.map((chapter, i) => (
-          <article key={chapter.number} className={`max-w-[85%] md:max-w-sm ${placement[i]}`}>
+          <article key={chapter.number} className={`max-w-[85%] md:max-w-md ${placement[i]}`}>
             <p className="display text-2xl italic text-cream">{chapter.number}</p>
             <h2 className="display mt-2 text-3xl md:text-4xl">{chapter.title}</h2>
             <div className="mt-4 space-y-3 text-lg leading-relaxed text-shell/80">
