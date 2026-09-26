@@ -8,8 +8,9 @@ export const site = {
   title: "Olem Studio",
   /** Dominio canónico: el que aparece en las previews al compartir la web. */
   url: "https://www.olem.es",
+  /** Texto de la preview al compartir la web y de los buscadores: el mismo que la entradilla de la hero. */
   description:
-    "Olem es una casa cultural de joyería y objetos con raíces en la isla de Annobón. Preventa del Drop 01: apúntate a la lista.",
+    "Creamos piezas destinadas a ser vividas, objetos para acompañar el proceso de convertirse en quien uno quiere llegar a ser.",
   instagram: {
     handle: "@olem___studio",
     url: "https://www.instagram.com/olem___studio/",
@@ -18,7 +19,7 @@ export const site = {
 };
 
 export const hero = {
-  lede: "Creamos piezas destinadas a ser vividas, objetos para acompañar el proceso de convertirse en quien uno quiere llegar a ser.",
+  lede: site.description,
   cta: "Unirme a la preventa",
   imageAlt: "Acantilados volcánicos de la costa y mar azul con reflejos de sol",
   caption: "Fig. 01 — Annobón, mar abierto",
