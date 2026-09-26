@@ -38,11 +38,6 @@ const images = {
     <rect y="${h * 0.55}" width="${w}" height="${h * 0.45}" fill="${C.petrol}"/>
     ${waves(w, h * 0.6, 9, 55, C.shell, 0.35)}
     ${label("OLEM — IMAGEN HERO", C.shell, w, h)}`],
-  "story.jpg": [1200, 1600, (w, h) => `
-    <rect width="${w}" height="${h}" fill="${C.petrolDeep}"/>
-    ${waves(w, h * 0.15, 18, 70, C.sky, 0.45)}
-    <circle cx="${w / 2}" cy="${h * 0.42}" r="${w * 0.2}" fill="none" stroke="${C.cream}" stroke-width="2" opacity="0.6"/>
-    ${label("OLEM — IMAGEN ORIGEN", C.shell, w, h)}`],
 };
 
 for (const [file, [w, h, draw]] of Object.entries(images)) {

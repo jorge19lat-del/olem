@@ -13,6 +13,7 @@
   --color-stone: #6b6a60; /* texto secundario */
 
   --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
   --font-sans: var(--font-jost), "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -49,21 +50,19 @@
   }
 }
 
-/* Titulares: serif fina, editorial. */
+/* Titulares: Playfair Display, alternativa gratuita a The Seasons (la del logotipo). */
 @utility display {
-  font-family: var(--font-serif);
-  font-weight: 300;
+  font-family: var(--font-display);
+  font-weight: 400;
   line-height: 0.95;
   letter-spacing: -0.01em;
 }
 
-/* Logotipo OLEM: serif en mayúsculas, espaciada. */
+/* Logotipo «Olem STUDIO» en Playfair Display. */
 @utility wordmark {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1;
+  line-height: 0.9;
 }
 
 /* Etiquetas pequeñas: sans fina, mayúsculas, muy espaciada. */

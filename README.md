@@ -25,12 +25,11 @@ npm run typecheck
 
 ## Imágenes
 
-`hero.jpg` es una foto generada con IA (Canva) y `pufferfish.webp` / `baby-tee.webp` son las fotos reales de producto con fondo transparente (si cambias una, actualiza `width`/`height` en `site.ts`). `story.jpg` sigue siendo un placeholder con la paleta de la marca, en `public/images/`:
+`hero.jpg` es una foto generada con IA (Canva) y `pufferfish.webp` / `baby-tee.webp` son las fotos reales de producto con fondo transparente (si cambias una, actualiza `width`/`height` en `site.ts`). La Fig. 02 de la narrativa es un collage (`IslandCollage`) que reutiliza `hero.jpg` y superpone el mapa ilustrado de Annobón (`AnnobonMap`, SVG). Todas están en `public/images/`:
 
 | Archivo | Uso | Proporción |
 | --- | --- | --- |
 | `hero.jpg` | Hero a pantalla completa (texto encima) | 16:9 horizontal, mín. 3200 px de ancho (pantallas Retina); deja aire a la izquierda para el texto |
-| `story.jpg` | Narrativa | 3:4 / 4:5 vertical |
 | `pufferfish.webp` | Camiseta Pufferfish | Fondo transparente, recortada al borde de la prenda |
 | `baby-tee.webp` | Baby tee | Fondo transparente, recortada al borde de la prenda |
 
@@ -43,7 +42,5 @@ Ver [`docs/google-sheets.md`](docs/google-sheets.md). Variables de entorno en `.
 
 ## Tipografías
 
-- Titulares: **Barlow Condensed** 700/800 — condensada, editorial, con más carácter en mayúsculas que Oswald.
-- Cuerpo: **Newsreader** — serif editorial pensada para lectura en pantalla (más "revista" que Lora).
-
-Ambas vía `next/font/google` (autoalojadas, sin petición extra a Google).
+- Logotipo y titulares: **Playfair Display** — alternativa gratuita a The Seasons (la tipografía del logotipo, de pago): serif de alto contraste con cursiva curva.
+- Cuerpo: **Cormorant Garamond**; etiquetas: **Jost**. Todas vía `next/font/google` (autoalojadas, sin petición extra a Google).

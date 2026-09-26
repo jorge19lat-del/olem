@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { story } from "@/content/site";
+import { IslandCollage } from "./IslandCollage";
 
 export function BrandStory() {
   return (
@@ -7,22 +7,13 @@ export function BrandStory() {
       <div className="grid grid-cols-12 gap-x-4 px-4 py-24 md:gap-x-8 md:px-10 md:py-36">
         <div className="col-span-12 md:col-span-5">
           <div className="md:sticky md:top-12">
-            <p className="eyebrow text-sky">{story.eyebrow}</p>
-            <h2 id="origen-titulo" className="display mt-8 text-[17vw] md:text-[7vw]">
+            <h2 id="origen-titulo" className="display text-[17vw] md:text-[7vw]">
               {story.heading[0]}
               <br />
               <span className="italic text-sky">{story.heading[1]}</span>
             </h2>
             <figure className="mt-14 hidden md:block md:w-4/5">
-              <div className="relative aspect-[3/4] overflow-hidden bg-shell/10">
-                <Image
-                  src="/images/story.jpg"
-                  alt={story.imageAlt}
-                  fill
-                  sizes="30vw"
-                  className="object-cover"
-                />
-              </div>
+              <IslandCollage sizes="30vw" />
               <figcaption className="mt-3 text-base italic text-shell/60">{story.caption}</figcaption>
             </figure>
           </div>
@@ -35,16 +26,18 @@ export function BrandStory() {
                 <span className="display col-span-1 text-3xl italic text-sky md:text-4xl">{chapter.number}</span>
                 <div className="col-span-5 border-t border-shell/20 pt-5">
                   <h3 className="display text-4xl md:text-5xl">{chapter.title}</h3>
-                  <p className="mt-5 text-xl leading-relaxed text-shell/80 md:text-[1.375rem]">{chapter.body}</p>
+                  <div className="mt-5 space-y-4 text-xl leading-relaxed text-shell/80 md:text-[1.375rem]">
+                    {chapter.body.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </li>
             ))}
           </ol>
 
           <figure className="mt-16 md:hidden">
-            <div className="relative aspect-[4/5] overflow-hidden bg-shell/10">
-              <Image src="/images/story.jpg" alt={story.imageAlt} fill sizes="92vw" className="object-cover" />
-            </div>
+            <IslandCollage sizes="80vw" />
             <figcaption className="mt-3 text-base italic text-shell/60">{story.caption}</figcaption>
           </figure>
 

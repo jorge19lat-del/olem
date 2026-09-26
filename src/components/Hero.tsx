@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { hero, site } from "@/content/site";
+import { Wordmark } from "./Wordmark";
 
 export function Hero() {
   return (
@@ -21,7 +22,7 @@ export function Hero() {
       <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-petrol-deep/40 to-transparent" aria-hidden />
 
       <nav className="flex items-center justify-between px-4 pt-6 md:px-10 md:pt-8">
-        <span className="wordmark text-xl">{site.name}</span>
+        <Wordmark className="text-2xl" />
         <a href="#preventa" className="eyebrow underline-offset-4 hover:underline">
           Drop 01 — Preventa
         </a>
@@ -29,8 +30,8 @@ export function Hero() {
 
       <div className="mt-auto grid grid-cols-12 gap-x-4 px-4 pt-24 pb-10 md:gap-x-8 md:px-10 md:pb-16">
         <div className="col-span-12 md:col-span-8 lg:col-span-7">
-          <h1 className="wordmark [text-shadow:0_2px_24px_rgb(18_63_78/0.35)] text-[26vw] font-light md:text-[13vw] lg:text-[12rem]">
-            {site.name}
+          <h1 className="[text-shadow:0_2px_24px_rgb(18_63_78/0.35)] text-[26vw] text-cream md:text-[13vw] lg:text-[12rem]">
+            <Wordmark />
           </h1>
           <p className="mt-8 max-w-xl text-2xl leading-snug font-light italic text-shell/90 md:mt-10 md:text-3xl">
             {hero.lede}
