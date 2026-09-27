@@ -13,8 +13,11 @@ export type StoredWaitlistEntry = WaitlistEntry & { createdAt: string };
 
 const PREFIX = "preventa/";
 
-/** El token lo añade Vercel al conectar un Blob store al proyecto (Storage → Blob). */
-export const isBlobConfigured = () => Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+/**
+ * Vercel añade una de estas variables al conectar un Blob store al proyecto (Storage → Blob):
+ * BLOB_STORE_ID en los stores nuevos (autenticación OIDC) o BLOB_READ_WRITE_TOKEN en los antiguos.
+ */
+export const isBlobConfigured = () => Boolean(process.env.BLOB_STORE_ID || process.env.BLOB_READ_WRITE_TOKEN);
 
 // Un store de Blob es público o privado según se creó; probamos privado y, si no, público.
 async function withAccess<T>(fn: (access: BlobAccessType) => Promise<T>): Promise<T> {
@@ -41,7 +44,7 @@ export async function saveWaitlistEntry(entry: WaitlistEntry): Promise<void> {
       console.info("[waitlist] Sin almacenamiento configurado; lead de desarrollo:", entry);
       return;
     }
-    throw new Error("Ni BLOB_READ_WRITE_TOKEN ni GOOGLE_SHEETS_WEBHOOK_URL están configuradas");
+    throw new Error("Ni Vercel Blob ni GOOGLE_SHEETS_WEBHOOK_URL están configurados");
   }
 
   if (isBlobConfigured()) {

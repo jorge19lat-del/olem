@@ -1,7 +1,7 @@
 # Lista de preventa
 
 Cada envío del formulario se guarda como un JSON en **Vercel Blob** (proyecto → Storage → Blob,
-conectado al proyecto `olem`; Vercel añade `BLOB_READ_WRITE_TOKEN` automáticamente).
+conectado al proyecto `olem`; Vercel añade `BLOB_STORE_ID` o `BLOB_READ_WRITE_TOKEN` automáticamente).
 
 ## Descargar el Excel
 
@@ -22,5 +22,5 @@ cada lead se envía también a esa hoja.
 
 ## En local
 
-Sin `BLOB_READ_WRITE_TOKEN` ni `GOOGLE_SHEETS_WEBHOOK_URL`, en `npm run dev` los leads se imprimen en la consola.
+Sin Blob conectado ni `GOOGLE_SHEETS_WEBHOOK_URL`, en `npm run dev` los leads se imprimen en la consola.
 En producción, si falta todo, el formulario muestra un error (para que no se pierdan leads en silencio).
