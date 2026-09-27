@@ -223,36 +223,6 @@ export const drop = {
           height: 768,
           alt: "La Annobón Baby Tee flotando en el agua clara de la orilla",
         },
-        {
-          kind: "video",
-          src: "/videos/baby-tee-mar.mp4",
-          poster: "/images/productos/baby-tee-mar-poster.webp",
-          width: 576,
-          height: 768,
-          alt: "La Annobón Baby Tee flotando en el mar, en blanco y negro",
-        },
-        {
-          kind: "photo",
-          src: "/images/productos/baby-tee-piscina.webp",
-          width: 1600,
-          height: 1200,
-          alt: "La Annobón Baby Tee flotando en una piscina de agua turquesa",
-          wide: true,
-        },
-        {
-          kind: "photo",
-          src: "/images/productos/baby-tee-penumbra.webp",
-          width: 1600,
-          height: 1200,
-          alt: "La Annobón Baby Tee sobre el suelo de madera, en penumbra",
-        },
-        {
-          kind: "photo",
-          src: "/images/productos/baby-tee-sombra.webp",
-          width: 1600,
-          height: 1200,
-          alt: "La Annobón Baby Tee sobre el suelo, a contraluz junto a una ventana",
-        },
       ],
       info: [
         {
