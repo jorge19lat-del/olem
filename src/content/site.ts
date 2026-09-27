@@ -148,13 +148,20 @@ export const drop = {
       image: { src: "/images/pufferfish.webp", width: 1219, height: 1183 },
       imageAlt: "Camiseta blanca Pufferfish con el pez globo azul y el texto «Isla de Annobón»",
       gallery: [
-        // Pendiente: añadir la foto PNG de la espalda cuando esté lista.
         {
           kind: "packshot",
           src: "/images/pufferfish.webp",
           width: 1219,
           height: 1183,
           alt: "Camiseta blanca Pufferfish con el pez globo azul y el texto «Isla de Annobón»",
+          aspect: "3/4",
+        },
+        {
+          kind: "packshot",
+          src: "/images/pufferfish-espalda.webp",
+          width: 1219,
+          height: 1184,
+          alt: "Espalda de la camiseta Pufferfish con el texto «sangre de ballena» en azul",
           aspect: "3/4",
         },
         {
