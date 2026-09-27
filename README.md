@@ -38,7 +38,7 @@ Para poner las fotos reales, sustituye cada archivo por otro **con el mismo nomb
 
 ## Lista de preventa
 
-Ver [`docs/google-sheets.md`](docs/google-sheets.md). Variables de entorno en `.env.example`.
+Se guarda en Vercel Blob y se descarga como Excel en `/admin/preventa`. Ver [`docs/preventa.md`](docs/preventa.md). Variables de entorno en `.env.example`.
 
 ## Tipografías
 
