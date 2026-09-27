@@ -77,7 +77,7 @@ export const SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
  * Cada pieza de la galería de un producto.
  * - packshot: PNG/WebP con fondo transparente, se muestra sobre un fondo liso.
  * - photo / video: fotos y vídeos del producto (el vídeo se reproduce en bucle, sin sonido).
- * width/height son los píxeles reales del archivo; `wide` ocupa las dos columnas en escritorio.
+ * width/height son los píxeles reales del archivo. Todas se muestran en el mismo recuadro 5/4, una debajo de otra.
  */
 export type ProductMedia = {
   kind: "packshot" | "photo" | "video";
@@ -87,9 +87,6 @@ export type ProductMedia = {
   alt: string;
   /** Solo vídeos: imagen que se ve mientras carga. */
   poster?: string;
-  wide?: boolean;
-  /** Proporción del recuadro (p. ej. "3/4") si no queremos la del archivo. */
-  aspect?: string;
 };
 
 export type Product = {
@@ -154,7 +151,6 @@ export const drop = {
           width: 1219,
           height: 1183,
           alt: "Camiseta blanca Pufferfish con el pez globo azul y el texto «Isla de Annobón»",
-          aspect: "3/4",
         },
         {
           kind: "packshot",
@@ -162,7 +158,6 @@ export const drop = {
           width: 1219,
           height: 1184,
           alt: "Espalda de la camiseta Pufferfish con el texto «sangre de ballena» en azul",
-          aspect: "3/4",
         },
         {
           kind: "video",
@@ -171,7 +166,6 @@ export const drop = {
           width: 464,
           height: 832,
           alt: "La Pufferfish T-shirt extendida sobre una roca volcánica junto al mar",
-          aspect: "3/4",
         },
       ],
       info: [
@@ -212,7 +206,6 @@ export const drop = {
           width: 1059,
           height: 980,
           alt: "Baby tee blanca acanalada con «Annobón, isla bonita» en letra cursiva negra",
-          wide: true,
         },
         {
           kind: "photo",
@@ -220,7 +213,6 @@ export const drop = {
           width: 1600,
           height: 1200,
           alt: "La Annobón Baby Tee extendida sobre un suelo de madera gris",
-          wide: true,
         },
         {
           kind: "video",
