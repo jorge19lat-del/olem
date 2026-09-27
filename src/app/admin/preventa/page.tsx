@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { isBlobConfigured } from "@/lib/waitlist";
 
 export const metadata: Metadata = {
   title: "Preventa — descarga",
@@ -12,6 +13,9 @@ export default async function PreventaAdminPage({ searchParams }: { searchParams
     <main className="mx-auto flex min-h-svh max-w-md flex-col justify-center px-4 py-20">
       <p className="eyebrow text-stone">Olem · Preventa</p>
       <h1 className="display mt-6 text-5xl text-petrol">Descargar la lista</h1>
+      <p className="mt-4 text-sm text-stone">
+        Almacenamiento: {isBlobConfigured() ? "conectado" : "no conectado (Vercel → Storage → Blob)"}
+      </p>
       <form action="/admin/preventa/excel" method="post" className="mt-10 space-y-8">
         <label className="block">
           <span className="eyebrow text-stone">Contraseña</span>
