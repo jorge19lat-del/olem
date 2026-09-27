@@ -276,16 +276,6 @@ export const drop = {
   ] satisfies Product[],
 };
 
-/** Espacio en las páginas de producto para las personas que ya llevan sus piezas de Olem. */
-export const community = {
-  eyebrow: "Comunidad",
-  heading: "Olem, vivido",
-  body: "Piezas destinadas a ser vividas. Si ya tienes la tuya, compártela etiquetando a @olem___studio y la traeremos aquí.",
-  cta: "Compartir mi pieza",
-  /** Fotos de la comunidad: añade { src, width, height, alt, handle } por cada una (en /public/images/comunidad). */
-  posts: [] as { src: string; width: number; height: number; alt: string; handle: string }[],
-};
-
 export const getProduct = (slug: string) => drop.products.find((p) => p.slug === slug);
 
 export const waitlist = {

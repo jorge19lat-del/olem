@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CommunitySection } from "@/components/CommunitySection";
 import { Footer } from "@/components/Footer";
 import { ProductGallery } from "@/components/ProductGallery";
 import { ProductPurchase } from "@/components/ProductPurchase";
@@ -101,8 +100,6 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </div>
         </div>
-
-        <CommunitySection />
 
         {others.length > 0 && (
           <section className="border-t border-night/10 px-4 py-20 md:px-10 md:py-28" aria-labelledby="drop-mas">
