@@ -5,14 +5,9 @@ import { useRef, useState } from "react";
 import type { ProductMedia } from "@/content/site";
 
 function MediaTile({ media, priority }: { media: ProductMedia; priority: boolean }) {
-  const aspectRatio = media.aspect ?? (media.kind === "packshot" ? (media.wide ? "5/4" : "4/5") : `${media.width}/${media.height}`);
-
   return (
-    // Móvil: todos los recuadros cuadrados para que el carrusel no salte de altura. Escritorio: su proporción.
-    <div
-      className={`relative aspect-square overflow-hidden md:aspect-[var(--ar)] ${media.kind === "packshot" ? "bg-sage/45" : "bg-night/5"}`}
-      style={{ "--ar": aspectRatio } as React.CSSProperties}
-    >
+    // Todas las piezas en el mismo recuadro 5/4; fotos y vídeos se recortan para llenarlo.
+    <div className={`relative aspect-[5/4] overflow-hidden ${media.kind === "packshot" ? "bg-sage/45" : "bg-night/5"}`}>
       {media.kind === "video" ? (
         <video
           src={media.src}
@@ -31,7 +26,7 @@ function MediaTile({ media, priority }: { media: ProductMedia; priority: boolean
           alt={media.alt}
           fill
           priority={priority}
-          sizes={media.wide ? "(min-width: 768px) 58vw, 88vw" : "(min-width: 768px) 29vw, 88vw"}
+          sizes="(min-width: 768px) 58vw, 88vw"
           className={media.kind === "packshot" ? "object-contain p-[8%]" : "object-cover"}
         />
       )}
@@ -39,7 +34,7 @@ function MediaTile({ media, priority }: { media: ProductMedia; priority: boolean
   );
 }
 
-/** Móvil: carrusel deslizable con contador. Escritorio: todas las piezas en una rejilla de dos columnas. */
+/** Móvil: carrusel deslizable con contador. Escritorio: todas las piezas en una columna, una debajo de otra. */
 export function ProductGallery({ media, name }: { media: ProductMedia[]; name: string }) {
   const track = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
@@ -58,10 +53,10 @@ export function ProductGallery({ media, name }: { media: ProductMedia[]; name: s
         onScroll={onScroll}
         role="region"
         aria-label={`Fotos de ${name}`}
-        className="-mx-4 flex snap-x snap-mandatory gap-2 overflow-x-auto px-4 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-2 md:items-start md:gap-3 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden"
+        className="-mx-4 flex snap-x snap-mandatory gap-2 overflow-x-auto px-4 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-1 md:gap-3 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden"
       >
         {media.map((m, i) => (
-          <div key={m.src} className={`w-[88vw] shrink-0 snap-center md:w-auto ${m.wide ? "md:col-span-2" : ""}`}>
+          <div key={m.src} className="w-[88vw] shrink-0 snap-center md:w-auto">
             <MediaTile media={m} priority={i === 0} />
           </div>
         ))}
