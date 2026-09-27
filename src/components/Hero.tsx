@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { hero, site } from "@/content/site";
+import Link from "next/link";
+import { hero, navigation, site } from "@/content/site";
 import { Wordmark } from "./Wordmark";
 
 export function Hero() {
@@ -21,8 +22,17 @@ export function Hero() {
       />
       <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-petrol-deep/40 to-transparent" aria-hidden />
 
-      <nav className="flex items-center justify-between px-4 pt-6 md:px-10 md:pt-8">
+      <nav className="flex items-center justify-between gap-6 px-4 pt-6 md:px-10 md:pt-8" aria-label="Principal">
         <Wordmark className="text-2xl" />
+        <ul className="flex items-center gap-5 md:gap-10">
+          {navigation.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="eyebrow text-shell/85 transition-colors hover:text-shell">
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
 
       <div className="mt-auto grid grid-cols-12 gap-x-4 px-4 pt-24 pb-10 md:gap-x-8 md:px-10 md:pb-16">

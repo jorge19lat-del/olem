@@ -1,14 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 import { drop, formatPrice, type Product } from "@/content/site";
 import { ReserveLink } from "./ReserveLink";
 
 function ProductCard({ product, index, className }: { product: Product; index: number; className?: string }) {
+  const href = `/productos/${product.slug}`;
   return (
     <article className={className}>
       <p className="eyebrow mb-6 text-stone">
         {String(index + 1).padStart(2, "0")} / {String(drop.products.length).padStart(2, "0")}
       </p>
-      <div>
+      <Link href={href} className="block" tabIndex={-1} aria-hidden>
         <Image
           src={product.image.src}
           width={product.image.width}
@@ -17,11 +19,15 @@ function ProductCard({ product, index, className }: { product: Product; index: n
           sizes="(min-width: 768px) 45vw, 92vw"
           className="h-auto w-full transition-transform duration-1000 hover:scale-[1.02]"
         />
-      </div>
+      </Link>
 
       <div className="mt-6 flex items-baseline justify-between gap-4 border-t border-night/15 pt-5">
         <div>
-          <h3 className="display text-5xl text-petrol md:text-6xl">{product.name}</h3>
+          <h3 className="display text-5xl text-petrol md:text-6xl">
+            <Link href={href} className="underline-offset-8 hover:underline">
+              {product.name}
+            </Link>
+          </h3>
           <p className="eyebrow mt-3 text-stone">{product.subtitle}</p>
         </div>
         <p className="display text-3xl italic md:text-4xl">{formatPrice(product.price)}</p>
@@ -30,8 +36,17 @@ function ProductCard({ product, index, className }: { product: Product; index: n
       <p className="mt-5 max-w-md text-xl leading-relaxed text-night/80">{product.description}</p>
 
       <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
+        <Link
+          href={href}
+          className="eyebrow inline-flex items-center gap-4 bg-petrol px-6 py-3.5 text-shell transition-colors hover:bg-night"
+        >
+          Ver producto
+          <span aria-hidden>⟶</span>
+        </Link>
         <ReserveLink productId={product.id}>{drop.cta}</ReserveLink>
-        <span className="eyebrow text-stone">Tallas {product.sizes.join(" · ")}</span>
+        <span className="eyebrow text-stone">
+          Tallas {product.sizes[0]}–{product.sizes[product.sizes.length - 1]}
+        </span>
       </div>
     </article>
   );

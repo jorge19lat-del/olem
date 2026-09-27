@@ -14,6 +14,7 @@ const labelClass = "eyebrow text-stone";
 export function WaitlistForm() {
   const [state, formAction, pending] = useActionState(joinWaitlist, initialState);
   const [selected, setSelected] = useState<string[]>([]);
+  const [sizes, setSizes] = useState<Record<string, string>>({});
 
   const toggle = (id: string, checked: boolean) =>
     setSelected((prev) => (checked ? [...new Set([...prev, id])] : prev.filter((p) => p !== id)));
@@ -21,6 +22,18 @@ export function WaitlistForm() {
   useEffect(() => {
     const onReserve = (e: Event) => toggle((e as CustomEvent<string>).detail, true);
     window.addEventListener(RESERVE_EVENT, onReserve);
+
+    // Desde una página de producto se llega con ?producto=…&talla=…: dejamos ambos ya elegidos.
+    const params = new URLSearchParams(window.location.search);
+    const product = drop.products.find((p) => p.id === params.get("producto"));
+    if (product) {
+      toggle(product.id, true);
+      const size = params.get("talla");
+      if (size && product.sizes.includes(size)) setSizes((prev) => ({ ...prev, [product.id]: size }));
+      // Limpiamos la dirección para que al recargar o compartir no se repita la selección.
+      window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.hash}`);
+    }
+
     return () => window.removeEventListener(RESERVE_EVENT, onReserve);
   }, []);
 
@@ -121,7 +134,8 @@ export function WaitlistForm() {
                           <span className={labelClass}>Talla</span>
                           <select
                             name={`size-${p.id}`}
-                            defaultValue=""
+                            value={sizes[p.id] ?? ""}
+                            onChange={(e) => setSizes((prev) => ({ ...prev, [p.id]: e.target.value }))}
                             required
                             aria-label={`Talla de ${p.name}`}
                             className="border-0 border-b border-night/25 bg-transparent py-1 pr-8 pl-1 text-xl text-night focus:border-petrol focus:ring-0 focus:outline-none"
